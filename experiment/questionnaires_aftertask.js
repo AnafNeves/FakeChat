@@ -328,7 +328,7 @@ const questionnaire_seacs = {
 
 const items_rqs = {
     RQS_1: "My friend/partner and I spend all our free time together",
-    RQS_2: "If I have a problem at school, work or home, I can talk to my friend/ partner about it",
+    RQS_2: "If I have a problem at school, work or home, I can talk to my friend/partner about it",
     RQS_3: "If other people were bothering me, my friend/partner would help me",
     RQS_4: "My friend/partner thinks of fun things for us to do together",
     RQS_5: "My friend/partner helps me when I am having trouble with something",
@@ -346,7 +346,7 @@ const items_rqs = {
     RQS_17: "If my friend/partner or I do something that bothers the other one of us, we can make up easily",
     RQS_18: "My friend/partner and I can argue a lot",
     RQS_19: "My friend/partner and I disagree about many things",
-    RQS_20: "If my friend/partner and I have a violent argument, we can say “I'm sorry” and everything will be alright",
+    RQS_20: "If my friend/partner and I have a violent argument, we can say 'I'm sorry' and everything will be alright",
     RQS_21: "I feel happy when I am with my friend/partner",
     RQS_22: "I think about my friend/partner even when they are not around",
 }

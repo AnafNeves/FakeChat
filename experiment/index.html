@@ -122,13 +122,13 @@
         timeline.push(demographics_debriefing)
 
         // save data via DataPipe
-        // timeline.push({
-        //     type: jsPsychPipe,
-        //     action: "save",
-        //     experiment_id: "IVMu1TevBRi6", // This in generated in the DataPipe interface
-        //     filename: `${participantID}.csv`,
-        //     data_string: () => jsPsych.data.get().csv(),
-        // })
+        timeline.push({
+            type: jsPsychPipe,
+            action: "save",
+            experiment_id: "IVMu1TevBRi6", // This in generated in the DataPipe interface
+            filename: `${participantID}.csv`,
+            data_string: () => jsPsych.data.get().csv(),
+        })
 
         timeline.push(demographics_endscreen)
 

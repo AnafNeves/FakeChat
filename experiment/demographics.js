@@ -265,10 +265,9 @@ var experiment_feedback = {
                         isRequired: false,
                     },
                     {
-                        type: "comment",
+                        type: "html",
                         name: "Study_Swap",
-                        title: "If you are a dissertation student, give us your study link here so we can complete your experiment!",
-                        isRequired: false,
+                        html: "<p><b>If you are a dissertation student, email your study link to Emma Benn (<i style='color:DodgerBlue;'>eb672@sussex.ac.uk</i>), and we will complete it.</b></p>",
                     },
                 ],
             },
