@@ -2,7 +2,7 @@ library(jsonlite)
 library(progress)
 
 # path for data
-path <- "C:/Users/asf25/Box/FakeChat/data/"
+# path <- "C:/Users/asf25/Box/FakeChat/data/"
 # path <- "C:/Users/asf25/Box/FakeChat/tests/"
 
 
