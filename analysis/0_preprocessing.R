@@ -1,141 +1,86 @@
 library(jsonlite)
 library(progress)
-library(tidyverse)
-library(easystats)
 
-options(warn = 2) # Stop on warnings
-
-# path <- "C:/Users/maisi/Box/FakeChat/
-# path <- "C:/Users/dmm56/Box/Data/FakeChat/"
-# path <- "C:/Users/domma/Box/Data/FakeChat/"
-# path <- "C:/Users/asf25/Box/FakeChat/"
-path <- "C:/Users/emmal/Box/FakeChat/"
-
-# Run loop ----------------------------------------------------------------
+# path for data
+# path <- "C:/Users/asf25/Box/FakeChat/data/"
+# path <- "C:/Users/asf25/Box/FakeChat/tests/"
 
 
-files <- list.files(path, full.names = TRUE, pattern = "*.csv")
+
+files <- list.files(path, pattern = "*.csv")
 
 # Progress bar
 progbar <- progress_bar$new(total = length(files))
 
 alldata <- data.frame()
-#alldata_task <- data.frame()
+swap_links <- data.frame()
+all_task <- data.frame()
 
-for (file in files) {
+for (file in files){
+ # file <- "Emma_test.csv"
   progbar$tick()
-  rawdata <- read.csv(file)
+  rawdata <- read.csv(paste0(path, "/", file))
+  message(paste("\nProcessing:", file))
   
-  
-  # Initialize participant-level data
   dat <- rawdata[rawdata$screen == "browser_info", ]
   
-  if (nrow(dat) == 0) {
-    print(paste0("skip (no browser_info): ", gsub(path, "", file)))
-    next
-  }
-  
-  # Deal with other datetime formats
-  if(dat$date == "2/5/2025") {
-    dat$date <- "05/02/2025"
-  }
+  participantID <- gsub(".csv", "", rev(strsplit(file, "/")[[1]])[1]) # Filename without extension
   
   data_ppt <- data.frame(
-    Participant = dat$participantID,
+    Participant = participantID,
     Recruitment = dat$researcher,
     Experiment_StartDate = as.POSIXct(paste(dat$date, dat$time), format = "%d/%m/%Y %H:%M:%S"),
-    Experiment_Duration = max(rawdata$time_elapsed) / 1000 / 60,
+    Experiment_Duration = rawdata[rawdata$screen == "demographics_debrief", "time_elapsed"] / 1000 / 60,
     Browser_Version = paste(dat$browser, dat$browser_version),
     Mobile = dat$mobile,
     Platform = dat$os,
     Screen_Width = dat$screen_width,
-    Screen_Height = dat$screen_height
-  )
-
-  data_ppt$AttentionScore <- rawdata[rawdata$screen == "demographics_debrief", "AttentionScore"]
+    Screen_Height = dat$screen_height)
   
   # Demographics
-  resp <- jsonlite::fromJSON(rawdata[rawdata$screen == "demographic_questions", ]$response)
+  demog <- jsonlite::fromJSON(rawdata[rawdata$screen == "demographic_questions", ]$response)
   
-  data_ppt$Gender <- ifelse(!is.null(resp$Gender), resp$Gender, NA)
-  data_ppt$Age <- ifelse(!is.null(resp$Age), resp$Age, NA)
+  # Gender
+  demog$Gender <- ifelse(demog$Gender == "other", demog$`Gender-Comment`, demog$Gender)
+  demog$`Gender-Comment` <- NULL
   
   # Education
+  demog$Education <- ifelse(demog$Education == "other", demog$`Education-Comment`, demog$Education)
+  demog$`Education-Comment` <- NULL
   
-  
-  data_ppt$Education <- ifelse(resp$Education == "other", resp$`Education-Comment`, resp$Education)
-  data_ppt$Education <- ifelse(data_ppt$Education %in% c("HND (college)"), "High school", data_ppt$Education)
-  # Detect "equivalent to a Bachelors" and "HND (college)" and convert to "Bachelor" and "High school"
-  data_ppt$Education <- ifelse(stringr::str_detect(data_ppt$Education, "equivalent to a Bachelors"), "Bachelor", data_ppt$Education)
-  data_ppt$Education <- ifelse(data_ppt$Education %in% c("3rd year BSc", "Bachelor non-university", "graduate certificate (Certificate IV)"), "Bachelor", data_ppt$Education)
-  data_ppt$Education <- ifelse(data_ppt$Education %in% c("NVQ 4", "Professional", "Vocational degree.", "level 3 nvq's",
-                                                         "tech college", "College - HND", "Vocational diploma", "Vocational Qualification",
-                                                         "Professional qualification"), "High school", data_ppt$Education)
-  
-  data_ppt$Student <- ifelse(!is.null(resp$Student), resp$Student, NA)
-  data_ppt$Country <- ifelse(!is.null(resp$Country), resp$Country, NA)
+  demog$Student <- ifelse(!is.null(demog$Student), demog$Student, NA)
+  demog$Student <-  ifelse(demog$Student == "other", demog$`Student-Comment`, demog$Student)
+  demog$`Student-Comment` <- NULL
   
   # Ethnicity
-  data_ppt$Ethnicity <- ifelse(!is.null(resp$Ethnicity), resp$Ethnicity, NA)
-  data_ppt$Ethnicity <- ifelse(
-    !is.na(resp$Ethnicity) && resp$Ethnicity == "other",
-    resp$`Ethnicity-Comment`,
-    resp$Ethnicity
-  )
-  data_ppt$Ethnicity <- ifelse(data_ppt$Ethnicity %in% c("Indigenous Native Indian"), "Other", data_ppt$Ethnicity)
-  data_ppt$Ethnicity <- ifelse(data_ppt$Ethnicity %in% c("Turkish"), "Middle Eastern/North African", data_ppt$Ethnicity)
-  data_ppt$Ethnicity <- ifelse(
-    data_ppt$Ethnicity %in% c("Prefer not to say"),
-    NA,
-    data_ppt$Ethnicity
-  )
-  
-  # Feedback
-  feedback <- jsonlite::fromJSON(rawdata[rawdata$screen == "experiment_feedback", "response"])
-  data_ppt$Experiment_Enjoyment <- ifelse(is.null(feedback$Feedback_Enjoyment), NA, feedback$Feedback_Enjoyment)
-  data_ppt$Experiment_Quality <- ifelse(is.null(feedback$Feedback_Quality), NA, feedback$Feedback_Quality)
-  data_ppt$Experiment_Feedback <- ifelse(is.null(feedback$Feedback_Text), NA, feedback$Feedback_Text)
-  
-  
-  # Questionnaires
-  mint <- as.data.frame(jsonlite::fromJSON(rawdata[
-    rawdata$screen == "questionnaire_mint",
-    "response"
-  ]))
-  names(mint) <- gsub("MINT_ReIA", "MINT_RelA", names(mint))
-  data_ppt <- cbind(data_ppt, mint)
-  data_ppt$Duration_MINT <- as.numeric(rawdata[
-    rawdata$screen == "questionnaire_mint",
-    "rt"
-  ]) /
-    1000 /
-    60
-  
-  bait <- as.data.frame(jsonlite::fromJSON(rawdata[
-    rawdata$screen == "questionnaire_bait",
-    "response"
-  ]))
-  data_ppt <- cbind(data_ppt, bait)
-  data_ppt$Duration_BAIT <- as.numeric(rawdata[
-    rawdata$screen == "questionnaire_bait",
-    "rt"
-  ]) /
-    1000 /
-    60
-  if (!"BAIT_AI_Use" %in% names(bait)) {
-    data_ppt$BAIT_AI_Use <- NA
-  }
-  
-  phq4 <- jsonlite::fromJSON(rawdata[
-    rawdata$screen == "questionnaire_phq4",
-    "response"
-  ])
-  phq4$instructions_phq4 <- NULL
-  if (is.null(phq4$LifeSatisfaction)) phq4$LifeSatisfaction <- NA
-  data_ppt <- cbind(data_ppt, as.data.frame(phq4))
-  
+  demog$Ethnicity <- ifelse(!is.null(demog$Ethnicity), demog$Ethnicity, NA)
+  demog$Ethnicity <- ifelse(demog$Ethnicity == "other", demog$`Ethnicity-Comment`, demog$Ethnicity)
+  demog$`Ethnicity-Comment` <- NULL
 
-  # Multiple Choices
+  demog <- as.data.frame(demog)
+  data_ppt <- cbind(data_ppt, demog)
+  
+  
+  # UESTIONNAIRESS ==================================================================================================
+  
+  ### --------------------------------------------------Before Task
+  
+  # DeJong
+  
+  dejong <- jsonlite::fromJSON(rawdata[rawdata$screen == "questionnaire_dejong", "response"])
+  data_ppt <- cbind(data_ppt, as.data.frame(dejong))
+  
+  # UCLA 
+  
+  ucla <- jsonlite::fromJSON(rawdata[rawdata$screen == "questionnaire_ucla", "response"])
+  data_ppt <- cbind(data_ppt, as.data.frame(ucla))
+  
+  # PHQ4
+  phq4 <- jsonlite::fromJSON(rawdata[rawdata$screen == "questionnaire_phq4", "response"])
+  data_ppt <- cbind(data_ppt, as.data.frame(phq4[-6]))
+  
+  # Mental health 
+  
   mental <- jsonlite::fromJSON(rawdata[rawdata$screen == "questionnaire_mentalhealth", "response"])
   v <- mental$Disorders_Psychiatric
   v[grep("GAD", v)] <- "GAD"
@@ -150,7 +95,7 @@ for (file in files) {
   v[grep("Borderline", v)] <- "BPD"
   v[grep("Panic ", v)] <- "Panic"
   v[grep("Bipolar ", v)] <- "Bipolar"
-  v[grep("Obsessive-Compulsive ", v)] <- "OCD"
+  v[grep("OCD", v)] <- "OCD"
   v[grep("none", v)] <- "None"
   data_ppt$Disorders_Psychiatric <- paste0(v, collapse = "; ")
   
@@ -172,6 +117,8 @@ for (file in files) {
     data_ppt$Disorders_PsychiatricTreatment <- NA
   }
   
+  # Medical and somatic difficulties
+  
   somatic <- jsonlite::fromJSON(rawdata[rawdata$screen == "questionnaire_somatichealth", "response"])
   somatic$Disorders_Somatic_Instructions <- NULL
   somatic <- somatic[grep("-Comment", names(somatic), invert = TRUE)]
@@ -189,61 +136,228 @@ for (file in files) {
   somatic[grep("Sjogren's ", somatic)] <- "Sjogren"
   data_ppt$Disorders_Somatic <- paste0(somatic, collapse = "; ")
   
-  alldata <- bind_rows(alldata, data_ppt)
+  ###-------------------------------- After Task 
+  
+  # MINT
+  
+  mint <- jsonlite::fromJSON(rawdata[rawdata$screen == "questionnaire_mint", "response"])
+  data_ppt <- cbind(data_ppt, as.data.frame(mint))
+  
+  # BAIT
+  
+  bait <- jsonlite::fromJSON(rawdata[rawdata$screen == "questionnaire_bait", "response"])
+  data_ppt <- cbind(data_ppt, as.data.frame(bait))
+  
+  # IRI
+  
+  iri <- jsonlite::fromJSON(rawdata[rawdata$screen == "questionnaire_iri", "response"])
+  data_ppt <- cbind(data_ppt, as.data.frame(iri))
+  
+  # SEACS
+  
+  seacs <- jsonlite::fromJSON(rawdata[rawdata$screen == "questionnaire_seacs", "response"])
+  data_ppt <- cbind(data_ppt, as.data.frame(seacs))
+
+  
+  # RQS  
+  rqs <- jsonlite::fromJSON(rawdata[rawdata$screen == "questionnaire_rqs", "response"])
+  data_ppt <- cbind(data_ppt, as.data.frame(rqs))
+  
+  # --------------------------------- Loneliness Follow Up
+  
+  # Loneliness General
+  loneliness_g <- jsonlite::fromJSON(rawdata[rawdata$screen == "loneliness_general", "response"])
+  data_ppt <- cbind(data_ppt, as.data.frame(loneliness_g))
+  
+  # Loneliness Mental 
+  loneliness_m <- jsonlite::fromJSON(rawdata[rawdata$screen == "loneliness_mental", "response"])
+  data_ppt <- cbind(data_ppt, as.data.frame(loneliness_m))
+  
+  # Loneliness Romantic 
+  loneliness_r <- jsonlite::fromJSON(rawdata[rawdata$screen == "loneliness_romantic", "response"])
+  data_ppt <- cbind(data_ppt, as.data.frame(loneliness_r))
+  
+  # Loneliness People 
+  loneliness_p <- jsonlite::fromJSON(rawdata[rawdata$screen == "loneliness_people", "response"])
+  # loneliness_p <- loneliness_p[!sapply(loneliness_p, is.null)]
+
+  # Standardize checkbox responses: replace "other" with "Other" and keep others as-is
+  if (!is.null(loneliness_p$LonelinessPeople)) {
+    loneliness_p$LonelinessPeople <- ifelse(
+      loneliness_p$LonelinessPeople == "other",
+      "Other",
+      loneliness_p$LonelinessPeople
+    )
+  }
+
+  # rename 
+  loneliness_p$LonelinessPeople[grep("AI ", loneliness_p$LonelinessPeople)] <- "AI"
+  loneliness_p$LonelinessPeople[grep("Favourite TV show", loneliness_p$LonelinessPeople)] <- "Media"
+  loneliness_p$LonelinessPeople[grep("Charities", loneliness_p$LonelinessPeople)] <- "Charities"
+
+  # Collapse multiple selections into a single string (if you want)
+  data_ppt$Loneliness_People <- paste0(loneliness_p$LonelinessPeople, collapse = "; ")
+
+  # Create separate TRUE/FALSE columns for each option
+  options_vec <- c("Friends", "Family", "AI", "Media", "Charities", "Other")
+  for (opt in options_vec) {
+    col_name <- paste0("LonelinessPeople_", opt)
+    data_ppt[[col_name]] <- opt %in% loneliness_p$LonelinessPeople
+  }
+
+  # Extract Likert ratings (keeping NA if they didn't select that option)
+  rating_vars <- c(
+    "LonelinessFriends",
+    "LonelinessFamily",
+    "LonelinessAI",
+    "LonelinessMedia",
+    "LonelinessCharities"
+  )
+
+  for (var in rating_vars) {
+    data_ppt[[var]] <- ifelse(is.null(loneliness_p[[var]]), NA, loneliness_p[[var]])
+  }
+  
+  # Feedback
+  
+  feedback <- jsonlite::fromJSON(rawdata[rawdata$screen == "experiment_feedback", "response"])
+  
+  data_ppt$Feedback_Enjoyment <- ifelse(is.null(feedback$Feedback_Enjoyment), NA, feedback$Feedback_Enjoyment)
+  data_ppt$Feedback_Quality <- ifelse(is.null(feedback$Feedback_Quality), NA, feedback$Feedback_Quality)
+  data_ppt$Feedback_Text <- ifelse(is.null(feedback$Feedback_Text), NA, feedback$Feedback_Text)
+  
+  
+  # Study Swap links
+  #swap_links <- data.frame(link = ifelse(is.null(feedback$Study_Swap), NA, feedback$Study_Swap))
+  
+
+  alldata <- rbind(alldata, data_ppt)  
+  
+  # TASK DATA ====================================================================================
+  
+  # ---------------------------phase 1
+  stims1 <- rawdata[rawdata$screen == "vignette_image1", ]
+  
+  resp1 <- sapply(
+    rawdata[rawdata$screen == "vignette_scales", "response"],
+    \(x) {
+      x <- as.data.frame(jsonlite::fromJSON(x))
+      if (!"AttentionCheck" %in% names(x)) {
+        x$AttentionCheck <- NA
+      }
+      x
+    },
+    simplify = FALSE,
+    USE.NAMES = FALSE
+  )
+  
+  
+  attention_check1 <- sapply(
+    rawdata[rawdata$screen == "vignette_attentioncheck", "response"],
+    \(x) {
+      x <- as.data.frame(jsonlite::fromJSON(x))
+      x
+    },
+    simplify = FALSE,
+    USE.NAMES = FALSE
+  )
+  
+  resp1 <- do.call(rbind, resp1)
+  attention_check1 <- do.call(rbind, attention_check1)
+  ratings1 <- rbind(resp1, attention_check1)
+
+
+  stims1$order <- seq_len(nrow(stims1))
+  ratings1$order <- seq_len(nrow(ratings1))
+
+  
+  data_task <- merge(
+    stims1[, c("participantID",
+               "vignette_id",
+               "condition",
+               "topic",
+               "order")],
+    ratings1,
+    by = "order",
+    all.x = TRUE
+  )
+  
+ data_task$participantID <- rep(participantID, each = 6)
+  
+  # Remove order column
+  data_task$order <- NULL
+  
+  
+  # --------------------------phase 2 
+  
+  stims2 <- rawdata[rawdata$screen == "phase2_vignette", ]
+  
+  resp2 <- sapply(
+    rawdata[rawdata$screen == "phase2_scale", "response"],
+    \(x) {
+      dat <- jsonlite::fromJSON(x)
+      dat$Box <- NULL
+      as.data.frame(dat)
+    },
+    simplify = FALSE,
+    USE.NAMES = FALSE
+  )
+  
+  
+  ratings2 <- do.call(rbind, resp2)
+
+  
+  stims2$order <- seq_len(nrow(stims2))
+  ratings2$order <- seq_len(nrow(ratings2))
+  
+  
+  data_task2 <- merge(
+    stims2[, c("participantID",
+               "vignette_id",
+               "order")],
+    ratings2,
+    by = "order",
+    all.x = TRUE
+  )
+  
+  data_task2$participantID <- rep(participantID, each = 6)
+  
+  # Remove order column
+  data_task2$order <- NULL
+  data_task2$Box <- NULL
+  
+  # Merge and clean
+  data_task <- merge(data_task, data_task2, by = c("participantID", "vignette_id"), all.x = TRUE)
+  
+  all_task <- rbind(all_task, data_task)
+  all_task <- as.data.frame(all_task)
 }
 
-# unique(alldata$Disorders_Psychiatric)
-# unique(alldata$Disorders_PsychiatricTreatment)
-# unique(alldata$Disorders_Somatic)
-# table(alldata$Education)
-# table(alldata$Ethnicity)
-# table(alldata$Recruitment)
 
-# Attention checks --------------------------------------------------------
+# Reanonimize ============================================================
 
-checks <- data.frame(
-  ID = alldata$Participant,
-  Experiment_Duration = alldata$Experiment_Duration,
-  MINT = as.numeric(alldata$MINT_AttentionCheck) / 6,
-  BAIT = 1 - as.numeric(alldata$BAIT_AttentionCheck) / 6
-)
-
-checks$Score <- rowMeans(checks[, c("MINT", "BAIT")], na.rm = TRUE)
-
-checks <- checks[!is.na(checks$ID), ]
-checks <- checks[order(checks$Score, decreasing = TRUE), ]
-
-hist(checks$Score)
-
-score <- checks[!checks$ID %in% c("os", "fw", "dm"), "Score"]
-hist(score)
-
-mean(score < 0.6, na.rm = TRUE)
-
-# checks[checks$ID=="5b7a360589bc2f0001e60363", ]
-
-# MINT: "I can always accurately answer to the extreme left on this question to show that I am reading it"
-# BAIT: "I can show that I am Human and not an AI by answering all the way to the right"
-
-
-# Make sure there are no duplicates
-if (nrow(alldata[duplicated(alldata), ]) > 0) {
-  stop("Duplicates detected!")
-}
-
-# Anonymize ---------------------------------------------------------------
-# Generate IDs
-ids <- paste0("S", format(sprintf("%03d", 1:nrow(alldata))))
-# Sort Participant according to date and assign new IDs
-names(ids) <- alldata$Participant[order(alldata$Experiment_StartDate)]
-# Replace IDs
-alldata$Participant <- ids[alldata$Participant]
-#alldata_task$Participant <- ids[alldata_task$Participant]
-
+# # order based on the date of the experiment
+# alldata <- alldata[order(alldata$Experiment_StartDate), ]
+# # Create correspondence map (mapping original Participant IDs to new ones)
+# correspondance <- setNames(paste0("S", sprintf("%03d", seq_along(alldata$Participant))), alldata$Participant)
+# # Reanonymize both datasets by updating the 'Participant' column
+# alldata$Participant <- correspondance[alldata$Participant]
+# alldata$Participant <- correspondance[alldata$Participant]
 
 # Save --------------------------------------------------------------------
-# restore default warnings settings
-options(warn = 0)
 
 write.csv(alldata, "../data/rawdata_participants.csv", row.names = FALSE)
-#write.csv(alldata_task, "../data/rawdata_task.csv", row.names = FALSE)
+write.csv(all_task, "../data/rawdata_task.csv", row.names = FALSE)
+
+
+# Study Swap Link
+#write.csv(swap_links , "../swap_links.csv", row.names = FALSE)
+
+
+
+
+
+
+
+
+
