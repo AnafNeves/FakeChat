@@ -234,7 +234,12 @@ for (file in files){
   # Study Swap links
   #swap_links <- data.frame(link = ifelse(is.null(feedback$Study_Swap), NA, feedback$Study_Swap))
   
+  # Fix typo in column name ============================================================
+  
+  data_ppt <- data_ppt |>
+    rename_with(~ stringr::str_replace(.x, "IRI_Cogntive", "IRI_Cognitive"))
 
+  
   alldata <- rbind(alldata, data_ppt)  
   
   # TASK DATA ====================================================================================
