@@ -1,12 +1,14 @@
 library(jsonlite)
 library(progress)
+library(tidyverse)
 
 # path for data
 # path <- "C:/Users/asf25/Box/FakeChat/data/"
 # path <- "C:/Users/asf25/Box/FakeChat/tests/"
 #path <- "C:/Users/roisin/Box/FakeChat/tests"
 #path <- "C:/Users/roisin/Box/FakeChat/data"
-
+path <- "C:/Users/emmal/Box/FakeChat/tests"
+path <- "C:/Users/emmal/Box/FakeChat/data"
 
 
 files <- list.files(path, pattern = "*.csv")
@@ -360,9 +362,11 @@ all_task$participantID <- ids[all_task$participantID]
 
 # Save --------------------------------------------------------------------
 
-write.csv(alldata, "C:/ReBel/github/FakeChat/data/rawdata_participants.csv", row.names = FALSE)
-write.csv(all_task, "C:/ReBel/github/FakeChat/data/rawdata_task.csv", row.names = FALSE)
+# write.csv(alldata, "C:/ReBel/github/FakeChat/data/rawdata_participants.csv", row.names = FALSE)
+# write.csv(all_task, "C:/ReBel/github/FakeChat/data/rawdata_task.csv", row.names = FALSE)
 
+write.csv(alldata, "C:/Users/emmal/OneDrive - University of Sussex/GitHub/Dissertation/FakeChat/data/rawdata_participants.csv", row.names = FALSE)
+write.csv(all_task, "C:/Users/emmal/OneDrive - University of Sussex/GitHub/Dissertation/FakeChat/data/rawdata_task.csv", row.names = FALSE)
 
 # Study Swap Link
 #write.csv(swap_links , "../swap_links.csv", row.names = FALSE)
