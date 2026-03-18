@@ -1,10 +1,22 @@
 "participantID","vignette_id","condition","topic","PartnerTrust","PartnerReal","ConversationMyself","ConversationSharing","AttentionCheck","Belief_AI_Human"
+"0e4wgbfdz5","mental1","Human","Mental",6,6,3,5,NA,25
+"0e4wgbfdz5","mental2","AI","Mental",7,6,6,4,"Everyday / Trivial",-53
+"0e4wgbfdz5","romantic1","AI","Romantic",5,5,3,4,NA,36
+"0e4wgbfdz5","romantic2","Human","Romantic",5,4,4,4,NA,23
+"0e4wgbfdz5","trivial1","Human","Trivial",1,3,2,1,"Romantic",14
+"0e4wgbfdz5","trivial2","AI","Trivial",5,3,5,3,NA,18
 "0m1gqgwoaa","mental1","Human","Mental",6,7,3,7,NA,77
 "0m1gqgwoaa","mental2","AI","Mental",2,3,1,1,"Romantic",-65
 "0m1gqgwoaa","romantic1","Human","Romantic",4,4,3,2,NA,64
 "0m1gqgwoaa","romantic2","AI","Romantic",1,4,1,1,NA,-60
 "0m1gqgwoaa","trivial1","AI","Trivial",2,2,1,2,NA,-67
 "0m1gqgwoaa","trivial2","Human","Trivial",4,2,1,2,"Everyday / Trivial",63
+"0oohpbyatf","mental1","Human","Mental",5,1,5,1,NA,-93
+"0oohpbyatf","mental2","AI","Mental",6,4,6,4,NA,-100
+"0oohpbyatf","romantic1","Human","Romantic",1,1,3,1,NA,75
+"0oohpbyatf","romantic2","AI","Romantic",6,7,5,6,NA,-100
+"0oohpbyatf","trivial1","AI","Trivial",7,7,3,4,"Mental Health",-100
+"0oohpbyatf","trivial2","Human","Trivial",6,5,4,5,"Romantic",-100
 "0x83qspvna","mental1","Human","Mental",3,6,3,6,NA,54
 "0x83qspvna","mental2","AI","Mental",5,6,3,6,NA,36
 "0x83qspvna","romantic1","Human","Romantic",3,6,2,2,NA,55
@@ -23,6 +35,12 @@
 "1h91gtbw1s","romantic2","AI","Romantic",3,1,2,1,NA,63
 "1h91gtbw1s","trivial1","Human","Trivial",1,2,1,1,"I don't remember",-100
 "1h91gtbw1s","trivial2","AI","Trivial",3,1,4,6,"Romantic",-100
+"1rndsybxab","mental1","AI","Mental",5,5,4,3,NA,17
+"1rndsybxab","mental2","Human","Mental",1,1,1,1,"Mental Health",-11
+"1rndsybxab","romantic1","Human","Romantic",5,7,6,5,NA,67
+"1rndsybxab","romantic2","AI","Romantic",2,4,4,1,"Romantic",-57
+"1rndsybxab","trivial1","AI","Trivial",1,1,4,1,NA,-34
+"1rndsybxab","trivial2","Human","Trivial",1,1,6,1,NA,33
 "1wvldok2w5","mental1","Human","Mental",5,5,6,5,NA,-90
 "1wvldok2w5","mental2","AI","Mental",5,2,4,5,NA,-50
 "1wvldok2w5","romantic1","Human","Romantic",3,1,3,5,"Mental Health",-60
@@ -59,6 +77,12 @@
 "29err4rxfk","romantic2","Human","Romantic",5,5,6,5,"Mental Health",-57
 "29err4rxfk","trivial1","Human","Trivial",3,3,4,2,NA,57
 "29err4rxfk","trivial2","AI","Trivial",4,4,5,4,NA,-63
+"2ee05oaosw","mental1","Human","Mental",3,4,2,2,NA,32
+"2ee05oaosw","mental2","AI","Mental",6,6,5,5,"Mental Health",-62
+"2ee05oaosw","romantic1","Human","Romantic",4,5,5,3,NA,58
+"2ee05oaosw","romantic2","AI","Romantic",7,7,6,6,"Everyday / Trivial",-100
+"2ee05oaosw","trivial1","AI","Trivial",6,6,6,5,NA,-100
+"2ee05oaosw","trivial2","Human","Trivial",7,7,7,7,NA,-22
 "2lj1ao04b0","mental1","AI","Mental",6,6,6,5,"Romantic",-100
 "2lj1ao04b0","mental2","Human","Mental",7,7,1,6,NA,-74
 "2lj1ao04b0","romantic1","Human","Romantic",5,5,1,1,NA,66
@@ -77,12 +101,24 @@
 "338eulqbpr","romantic2","Human","Romantic",4,4,7,4,NA,-97
 "338eulqbpr","trivial1","AI","Trivial",3,1,3,3,"Romantic",-50
 "338eulqbpr","trivial2","Human","Trivial",5,4,5,4,NA,-100
+"35zlyzhdbk","mental1","Human","Mental",5,3,1,5,NA,23
+"35zlyzhdbk","mental2","AI","Mental",5,2,1,2,NA,-71
+"35zlyzhdbk","romantic1","AI","Romantic",5,1,5,5,NA,-55
+"35zlyzhdbk","romantic2","Human","Romantic",6,6,7,7,"Everyday / Trivial",-33
+"35zlyzhdbk","trivial1","Human","Trivial",5,1,1,1,NA,72
+"35zlyzhdbk","trivial2","AI","Trivial",3,2,2,3,"Mental Health",25
 "38ltrh6p8m","mental1","Human","Mental",6,1,7,2,NA,50
 "38ltrh6p8m","mental2","AI","Mental",2,1,5,2,"Romantic",-100
 "38ltrh6p8m","romantic1","AI","Romantic",2,2,6,2,NA,-52
 "38ltrh6p8m","romantic2","Human","Romantic",2,1,4,1,NA,-53
 "38ltrh6p8m","trivial1","AI","Trivial",4,2,6,3,"Mental Health",-100
 "38ltrh6p8m","trivial2","Human","Trivial",6,1,7,1,NA,-78
+"3bmthoxd2d","mental1","AI","Mental",2,1,1,1,NA,-70
+"3bmthoxd2d","mental2","Human","Mental",4,2,2,1,"Mental Health",13
+"3bmthoxd2d","romantic1","AI","Romantic",3,3,1,1,"Mental Health",32
+"3bmthoxd2d","romantic2","Human","Romantic",5,4,2,2,NA,-33
+"3bmthoxd2d","trivial1","AI","Trivial",1,1,1,1,NA,-100
+"3bmthoxd2d","trivial2","Human","Trivial",4,4,1,1,NA,-42
 "3lj9duut6m","mental1","AI","Mental",4,3,2,2,NA,100
 "3lj9duut6m","mental2","Human","Mental",4,4,2,2,NA,100
 "3lj9duut6m","romantic1","AI","Romantic",4,3,5,3,NA,-100
@@ -137,6 +173,12 @@
 "56l26ljd59","romantic2","AI","Romantic",1,1,4,1,NA,-61
 "56l26ljd59","trivial1","AI","Trivial",1,1,4,1,"Romantic",-76
 "56l26ljd59","trivial2","Human","Trivial",1,1,1,1,"Mental Health",-100
+"5ag3s4dc59","mental1","Human","Mental",7,7,7,7,NA,70
+"5ag3s4dc59","mental2","AI","Mental",7,7,7,7,NA,-70
+"5ag3s4dc59","romantic1","AI","Romantic",6,6,6,6,NA,-70
+"5ag3s4dc59","romantic2","Human","Romantic",7,7,7,7,NA,-60
+"5ag3s4dc59","trivial1","Human","Trivial",6,6,6,6,"Mental Health",-75
+"5ag3s4dc59","trivial2","AI","Trivial",6,6,6,6,"Romantic",70
 "5l3ed06enl","mental1","AI","Mental",2,2,2,2,NA,-100
 "5l3ed06enl","mental2","Human","Mental",2,2,2,2,"Everyday / Trivial",-100
 "5l3ed06enl","romantic1","Human","Romantic",2,2,2,2,NA,-100
@@ -149,12 +191,30 @@
 "5vbllw3sm2","romantic2","Human","Romantic",6,5,5,4,"Everyday / Trivial",-100
 "5vbllw3sm2","trivial1","AI","Trivial",5,4,5,4,"Mental Health",-100
 "5vbllw3sm2","trivial2","Human","Trivial",3,3,3,2,NA,-100
+"6fch3npcdu","mental1","AI","Mental",2,5,7,2,"Everyday / Trivial",-17
+"6fch3npcdu","mental2","Human","Mental",1,1,7,2,NA,-100
+"6fch3npcdu","romantic1","AI","Romantic",2,4,7,1,"Romantic",-100
+"6fch3npcdu","romantic2","Human","Romantic",2,3,7,2,NA,-100
+"6fch3npcdu","trivial1","AI","Trivial",2,5,7,2,NA,-100
+"6fch3npcdu","trivial2","Human","Trivial",2,4,7,2,NA,-100
+"6o5k8psmhz","mental1","AI","Mental",3,1,5,2,NA,-100
+"6o5k8psmhz","mental2","Human","Mental",1,1,1,1,NA,-100
+"6o5k8psmhz","romantic1","Human","Romantic",6,1,7,2,"Everyday / Trivial",-100
+"6o5k8psmhz","romantic2","AI","Romantic",7,7,7,6,"Mental Health",100
+"6o5k8psmhz","trivial1","Human","Trivial",4,3,6,2,NA,-100
+"6o5k8psmhz","trivial2","AI","Trivial",4,1,7,3,NA,100
 "6pkxvphvz3","mental1","Human","Mental",4,2,2,2,NA,-87
 "6pkxvphvz3","mental2","AI","Mental",1,1,1,1,"Romantic",-38
 "6pkxvphvz3","romantic1","AI","Romantic",1,3,1,1,NA,-100
 "6pkxvphvz3","romantic2","Human","Romantic",4,1,2,1,NA,-100
 "6pkxvphvz3","trivial1","Human","Trivial",2,1,1,4,NA,-100
 "6pkxvphvz3","trivial2","AI","Trivial",1,1,1,1,"Mental Health",100
+"6y332tt50u","mental1","AI","Mental",3,3,3,3,"Romantic",-61
+"6y332tt50u","mental2","Human","Mental",4,3,3,3,NA,-23
+"6y332tt50u","romantic1","AI","Romantic",3,3,2,2,NA,-20
+"6y332tt50u","romantic2","Human","Romantic",5,5,4,4,"Mental Health",-23
+"6y332tt50u","trivial1","Human","Trivial",5,4,3,3,NA,-48
+"6y332tt50u","trivial2","AI","Trivial",5,5,5,5,NA,15
 "7980k9gjv4","mental1","AI","Mental",4,2,5,3,"Everyday / Trivial",-22
 "7980k9gjv4","mental2","Human","Mental",4,4,5,4,"Mental Health",30
 "7980k9gjv4","romantic1","Human","Romantic",4,3,4,3,NA,-66
@@ -233,12 +293,6 @@
 "atqn9fuzs3","romantic2","AI","Romantic",5,6,6,4,"Mental Health",37
 "atqn9fuzs3","trivial1","AI","Trivial",6,6,7,6,NA,66
 "atqn9fuzs3","trivial2","Human","Trivial",4,2,3,2,"Romantic",40
-"b3vowm9w0d","mental1","Human","Mental",5,6,4,6,"Mental Health",-100
-"b3vowm9w0d","mental2","AI","Mental",4,4,4,3,NA,-38
-"b3vowm9w0d","romantic1","AI","Romantic",6,4,5,6,NA,-68
-"b3vowm9w0d","romantic2","Human","Romantic",4,5,5,5,NA,88
-"b3vowm9w0d","trivial1","Human","Trivial",3,3,4,2,NA,64
-"b3vowm9w0d","trivial2","AI","Trivial",4,5,6,5,"Romantic",14
 "b7rnwuma3y","mental1","Human","Mental",2,1,1,1,NA,-100
 "b7rnwuma3y","mental2","AI","Mental",1,1,1,1,NA,37
 "b7rnwuma3y","romantic1","Human","Romantic",1,1,1,1,"Mental Health",-17
@@ -287,6 +341,12 @@
 "ean9580qtv","romantic2","Human","Romantic",6,1,5,6,NA,-100
 "ean9580qtv","trivial1","AI","Trivial",2,2,3,2,NA,-100
 "ean9580qtv","trivial2","Human","Trivial",6,2,5,5,"Romantic",-79
+"encqxc9vo3","mental1","AI","Mental",2,2,2,2,"Mental Health",-100
+"encqxc9vo3","mental2","Human","Mental",1,1,1,1,NA,20
+"encqxc9vo3","romantic1","AI","Romantic",5,4,4,1,NA,-71
+"encqxc9vo3","romantic2","Human","Romantic",3,2,1,1,"Mental Health",20
+"encqxc9vo3","trivial1","Human","Trivial",5,4,5,2,NA,-4
+"encqxc9vo3","trivial2","AI","Trivial",4,2,3,2,NA,-5
 "ep6m44emj1","mental1","Human","Mental",2,2,5,2,NA,80
 "ep6m44emj1","mental2","AI","Mental",2,2,4,2,NA,-60
 "ep6m44emj1","romantic1","Human","Romantic",3,2,4,2,"Everyday / Trivial",50
@@ -317,6 +377,12 @@
 "fbl3o9fkw9","romantic2","Human","Romantic",3,4,4,4,NA,18
 "fbl3o9fkw9","trivial1","AI","Trivial",1,1,4,1,NA,-100
 "fbl3o9fkw9","trivial2","Human","Trivial",1,1,1,1,"Romantic",100
+"fq5fd8ls09","mental1","AI","Mental",4,5,3,4,NA,-25
+"fq5fd8ls09","mental2","Human","Mental",4,6,1,4,"Romantic",32
+"fq5fd8ls09","romantic1","AI","Romantic",4,5,2,4,"Mental Health",59
+"fq5fd8ls09","romantic2","Human","Romantic",4,6,6,5,NA,-50
+"fq5fd8ls09","trivial1","AI","Trivial",4,5,3,7,NA,-91
+"fq5fd8ls09","trivial2","Human","Trivial",4,6,6,7,NA,45
 "fuyuyzqdht","mental1","Human","Mental",5,5,3,3,NA,-62
 "fuyuyzqdht","mental2","AI","Mental",1,4,5,1,NA,-54
 "fuyuyzqdht","romantic1","AI","Romantic",1,1,2,1,"Mental Health",-72
@@ -335,6 +401,12 @@
 "gz5ayjloe7","romantic2","AI","Romantic",1,5,2,2,NA,-100
 "gz5ayjloe7","trivial1","Human","Trivial",3,3,1,3,NA,-100
 "gz5ayjloe7","trivial2","AI","Trivial",4,2,3,3,"Mental Health",-100
+"hamek7gjuj","mental1","Human","Mental",3,3,3,3,NA,-53
+"hamek7gjuj","mental2","AI","Mental",1,2,1,2,NA,-49
+"hamek7gjuj","romantic1","Human","Romantic",1,4,3,2,"Mental Health",33
+"hamek7gjuj","romantic2","AI","Romantic",4,3,5,4,NA,54
+"hamek7gjuj","trivial1","Human","Trivial",5,4,4,3,"Everyday / Trivial",-55
+"hamek7gjuj","trivial2","AI","Trivial",5,6,2,3,NA,-95
 "hdutx4ptsh","mental1","Human","Mental",5,4,5,5,NA,-51
 "hdutx4ptsh","mental2","AI","Mental",6,7,6,6,"Romantic",23
 "hdutx4ptsh","romantic1","Human","Romantic",7,7,6,7,NA,-100
@@ -359,12 +431,24 @@
 "hvtw22tvhg","romantic2","Human","Romantic",3,4,2,3,NA,38
 "hvtw22tvhg","trivial1","AI","Trivial",2,2,1,2,"Romantic",-79
 "hvtw22tvhg","trivial2","Human","Trivial",4,3,4,4,NA,45
+"jqp074dz4q","mental1","Human","Mental",4,4,5,4,"Mental Health",-100
+"jqp074dz4q","mental2","AI","Mental",5,5,5,3,NA,-100
+"jqp074dz4q","romantic1","Human","Romantic",4,4,4,3,"Mental Health",49
+"jqp074dz4q","romantic2","AI","Romantic",4,5,5,3,NA,-100
+"jqp074dz4q","trivial1","Human","Trivial",5,6,6,4,NA,-100
+"jqp074dz4q","trivial2","AI","Trivial",3,5,4,4,NA,-72
 "k11h56qs1x","mental1","AI","Mental",1,1,1,1,NA,-98
 "k11h56qs1x","mental2","Human","Mental",5,5,5,5,"Mental Health",-74
 "k11h56qs1x","romantic1","AI","Romantic",4,5,5,4,NA,-74
 "k11h56qs1x","romantic2","Human","Romantic",1,1,1,1,NA,-84
 "k11h56qs1x","trivial1","AI","Trivial",4,5,5,4,"Everyday / Trivial",-100
 "k11h56qs1x","trivial2","Human","Trivial",5,6,5,5,NA,62
+"k3oq5m941d","mental1","Human","Mental",3,1,3,2,NA,-100
+"k3oq5m941d","mental2","AI","Mental",1,1,1,1,NA,100
+"k3oq5m941d","romantic1","AI","Romantic",1,1,1,1,NA,-100
+"k3oq5m941d","romantic2","Human","Romantic",5,5,2,2,"Mental Health",-100
+"k3oq5m941d","trivial1","Human","Trivial",4,1,3,1,NA,-100
+"k3oq5m941d","trivial2","AI","Trivial",2,1,1,1,"Romantic",100
 "kh0t41kyyt","mental1","Human","Mental",5,5,6,6,"Everyday / Trivial",50
 "kh0t41kyyt","mental2","AI","Mental",5,5,5,5,"I don't remember",-63
 "kh0t41kyyt","romantic1","Human","Romantic",5,5,5,5,NA,51
@@ -389,6 +473,12 @@
 "l04lx96u88","romantic2","AI","Romantic",4,5,4,4,NA,-100
 "l04lx96u88","trivial1","Human","Trivial",3,2,3,2,NA,-49
 "l04lx96u88","trivial2","AI","Trivial",5,6,6,4,"Romantic",-100
+"m3a6yn9txu","mental1","AI","Mental",3,3,3,3,NA,-8
+"m3a6yn9txu","mental2","Human","Mental",2,1,2,1,"Everyday / Trivial",-100
+"m3a6yn9txu","romantic1","Human","Romantic",2,2,1,1,NA,71
+"m3a6yn9txu","romantic2","AI","Romantic",4,5,3,4,NA,-100
+"m3a6yn9txu","trivial1","AI","Trivial",2,1,1,1,NA,-100
+"m3a6yn9txu","trivial2","Human","Trivial",1,1,1,1,"Everyday / Trivial",100
 "Maisie","mental1","AI","Mental",5,4,5,3,NA,48
 "Maisie","mental2","Human","Mental",6,5,6,4,"Everyday / Trivial",52
 "Maisie","romantic1","Human","Romantic",6,5,6,4,"Everyday / Trivial",57
@@ -401,6 +491,12 @@
 "moo0cm9ztc","romantic2","Human","Romantic",2,1,2,2,"Romantic",-51
 "moo0cm9ztc","trivial1","Human","Trivial",5,4,4,3,NA,-53
 "moo0cm9ztc","trivial2","AI","Trivial",2,1,2,1,"Everyday / Trivial",36
+"n1lv809y20","mental1","Human","Mental",4,3,4,3,"Mental Health",-54
+"n1lv809y20","mental2","AI","Mental",4,3,3,3,NA,28
+"n1lv809y20","romantic1","Human","Romantic",5,6,5,4,NA,52
+"n1lv809y20","romantic2","AI","Romantic",5,5,5,5,NA,-54
+"n1lv809y20","trivial1","AI","Trivial",5,4,3,3,"Mental Health",-46
+"n1lv809y20","trivial2","Human","Trivial",5,5,6,5,NA,32
 "n4e3ffpvlg","mental1","Human","Mental",3,2,1,1,NA,-29
 "n4e3ffpvlg","mental2","AI","Mental",6,7,7,2,NA,-28
 "n4e3ffpvlg","romantic1","AI","Romantic",6,6,7,3,NA,-33
@@ -455,6 +551,12 @@
 "ob5jby06xp","romantic2","Human","Romantic",6,5,5,5,NA,85
 "ob5jby06xp","trivial1","Human","Trivial",5,4,5,5,"Romantic",-95
 "ob5jby06xp","trivial2","AI","Trivial",5,3,5,4,NA,92
+"ojhpgztehe","mental1","AI","Mental",5,4,6,4,"Everyday / Trivial",-100
+"ojhpgztehe","mental2","Human","Mental",5,4,6,6,"Mental Health",-98
+"ojhpgztehe","romantic1","Human","Romantic",5,4,5,5,NA,-100
+"ojhpgztehe","romantic2","AI","Romantic",5,5,6,5,NA,-100
+"ojhpgztehe","trivial1","Human","Trivial",4,2,1,4,NA,-100
+"ojhpgztehe","trivial2","AI","Trivial",4,2,1,4,NA,-100
 "ooykdnnjkh","mental1","AI","Mental",2,1,2,2,"Mental Health",-100
 "ooykdnnjkh","mental2","Human","Mental",4,1,1,3,NA,-74
 "ooykdnnjkh","romantic1","Human","Romantic",1,3,1,1,NA,-37
@@ -485,6 +587,12 @@
 "pe4ltdb07n","romantic2","AI","Romantic",7,7,5,6,NA,-96
 "pe4ltdb07n","trivial1","AI","Trivial",7,7,1,4,NA,-100
 "pe4ltdb07n","trivial2","Human","Trivial",7,7,7,6,NA,100
+"pilot","mental1","Human","Mental",5,6,4,6,"Mental Health",-100
+"pilot","mental2","AI","Mental",4,4,4,3,NA,-38
+"pilot","romantic1","AI","Romantic",6,4,5,6,NA,-68
+"pilot","romantic2","Human","Romantic",4,5,5,5,NA,88
+"pilot","trivial1","Human","Trivial",3,3,4,2,NA,64
+"pilot","trivial2","AI","Trivial",4,5,6,5,"Romantic",14
 "pk8s4oebos","mental1","AI","Mental",4,4,4,2,NA,42
 "pk8s4oebos","mental2","Human","Mental",1,1,2,2,"Romantic",-24
 "pk8s4oebos","romantic1","AI","Romantic",5,6,3,4,NA,18
@@ -515,6 +623,12 @@
 "rqyoyldpru","romantic2","Human","Romantic",1,1,1,1,NA,-100
 "rqyoyldpru","trivial1","Human","Trivial",6,5,5,4,NA,-51
 "rqyoyldpru","trivial2","AI","Trivial",4,4,5,4,"Romantic",-100
+"s2kq0hdz3s","mental1","Human","Mental",1,1,1,1,NA,17
+"s2kq0hdz3s","mental2","AI","Mental",1,1,3,4,NA,-79
+"s2kq0hdz3s","romantic1","AI","Romantic",4,2,2,3,"Romantic",21
+"s2kq0hdz3s","romantic2","Human","Romantic",1,1,2,2,NA,-100
+"s2kq0hdz3s","trivial1","Human","Trivial",2,1,1,2,"Mental Health",-100
+"s2kq0hdz3s","trivial2","AI","Trivial",3,3,2,1,NA,33
 "s4djv5eu09","mental1","AI","Mental",7,7,7,6,"Romantic",-95
 "s4djv5eu09","mental2","Human","Mental",5,1,2,1,NA,-100
 "s4djv5eu09","romantic1","AI","Romantic",1,1,1,1,NA,100
@@ -581,12 +695,6 @@
 "u125u213k7","romantic2","Human","Romantic",1,1,1,1,NA,-100
 "u125u213k7","trivial1","AI","Trivial",1,1,1,1,"I don't remember",-100
 "u125u213k7","trivial2","Human","Trivial",3,1,1,1,NA,-100
-"u7aljev7kf","mental1","AI","Mental",7,7,7,7,"I don't remember",80
-"u7aljev7kf","mental2","Human","Mental",7,7,7,7,"I don't remember",89
-"u7aljev7kf","romantic1","Human","Romantic",7,7,7,7,NA,85
-"u7aljev7kf","romantic2","AI","Romantic",7,7,7,7,NA,91
-"u7aljev7kf","trivial1","Human","Trivial",7,7,7,7,NA,90
-"u7aljev7kf","trivial2","AI","Trivial",7,7,7,7,NA,79
 "uc29ke0e02","mental1","AI","Mental",6,6,5,4,"Mental Health",-67
 "uc29ke0e02","mental2","Human","Mental",1,6,1,1,NA,-60
 "uc29ke0e02","romantic1","AI","Romantic",3,3,1,1,NA,-20
@@ -605,6 +713,12 @@
 "v0q3bkc9rl","romantic2","Human","Romantic",5,3,3,5,NA,-38
 "v0q3bkc9rl","trivial1","Human","Trivial",2,5,2,2,NA,-59
 "v0q3bkc9rl","trivial2","AI","Trivial",3,5,4,3,"Everyday / Trivial",-59
+"v3c6mpjcd9","mental1","AI","Mental",2,3,2,1,NA,-98
+"v3c6mpjcd9","mental2","Human","Mental",2,2,2,2,"Romantic",97
+"v3c6mpjcd9","romantic1","Human","Romantic",4,3,2,4,"Everyday / Trivial",93
+"v3c6mpjcd9","romantic2","AI","Romantic",2,2,2,2,NA,-100
+"v3c6mpjcd9","trivial1","Human","Trivial",2,2,2,2,NA,-99
+"v3c6mpjcd9","trivial2","AI","Trivial",3,2,3,3,NA,-98
 "vkpm19heag","mental1","Human","Mental",2,2,4,3,NA,-11
 "vkpm19heag","mental2","AI","Mental",4,4,4,4,NA,-61
 "vkpm19heag","romantic1","AI","Romantic",4,3,4,3,NA,-15
@@ -623,6 +737,12 @@
 "xbfj4kkwzl","romantic2","Human","Romantic",4,4,6,2,NA,-60
 "xbfj4kkwzl","trivial1","Human","Trivial",3,2,6,3,NA,40
 "xbfj4kkwzl","trivial2","AI","Trivial",2,2,4,2,NA,40
+"xm44omk6os","mental1","AI","Mental",3,2,5,3,NA,-81
+"xm44omk6os","mental2","Human","Mental",4,1,6,3,"Everyday / Trivial",50
+"xm44omk6os","romantic1","Human","Romantic",4,2,1,5,NA,90
+"xm44omk6os","romantic2","AI","Romantic",2,1,3,2,NA,-20
+"xm44omk6os","trivial1","Human","Trivial",3,3,2,3,"Romantic",40
+"xm44omk6os","trivial2","AI","Trivial",5,5,4,5,NA,-95
 "xsm91h3b8o","mental1","Human","Mental",3,5,6,3,NA,81
 "xsm91h3b8o","mental2","AI","Mental",2,1,7,2,"Everyday / Trivial",-100
 "xsm91h3b8o","romantic1","AI","Romantic",1,1,2,1,NA,-100
@@ -641,6 +761,12 @@
 "z06yss8t47","romantic2","Human","Romantic",3,5,3,2,"Romantic",50
 "z06yss8t47","trivial1","AI","Trivial",5,6,2,5,"Mental Health",-75
 "z06yss8t47","trivial2","Human","Trivial",6,6,6,6,NA,50
+"ze69kapxa3","mental1","Human","Mental",7,7,6,7,NA,-68
+"ze69kapxa3","mental2","AI","Mental",4,5,1,1,NA,-55
+"ze69kapxa3","romantic1","Human","Romantic",1,1,1,1,"Romantic",-99
+"ze69kapxa3","romantic2","AI","Romantic",7,5,7,7,"Everyday / Trivial",100
+"ze69kapxa3","trivial1","AI","Trivial",2,2,1,1,NA,56
+"ze69kapxa3","trivial2","Human","Trivial",7,7,4,6,NA,90
 "zlle6oa0wy","mental1","AI","Mental",4,3,3,3,NA,50
 "zlle6oa0wy","mental2","Human","Mental",1,2,1,1,"Mental Health",70
 "zlle6oa0wy","romantic1","Human","Romantic",5,5,4,4,NA,-50
