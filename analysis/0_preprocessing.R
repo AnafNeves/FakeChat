@@ -1,10 +1,14 @@
 library(jsonlite)
 library(progress)
+library(tidyverse)
 
 # path for data
 # path <- "C:/Users/asf25/Box/FakeChat/data/"
 # path <- "C:/Users/asf25/Box/FakeChat/tests/"
-
+#path <- "C:/Users/roisin/Box/FakeChat/tests"
+#path <- "C:/Users/roisin/Box/FakeChat/data"
+path <- "C:/Users/emmal/Box/FakeChat/tests"
+path <- "C:/Users/emmal/Box/FakeChat/data"
 
 
 files <- list.files(path, pattern = "*.csv")
@@ -61,7 +65,7 @@ for (file in files){
   data_ppt <- cbind(data_ppt, demog)
   
   
-  # UESTIONNAIRESS ==================================================================================================
+  # QUESTIONNAIRES ==================================================================================================
   
   ### --------------------------------------------------Before Task
   
@@ -135,7 +139,9 @@ for (file in files){
   somatic[grep("Crohn's ", somatic)] <- "Crohn"
   somatic[grep("Sjogren's ", somatic)] <- "Sjogren"
   data_ppt$Disorders_Somatic <- paste0(somatic, collapse = "; ")
-  
+  if (all(data_ppt$questionnaire_somatichealth == "none")) {
+    data_ppt$questionnaire_somatichealth <- NA
+  }
   ###-------------------------------- After Task 
   
   # MINT
@@ -230,7 +236,12 @@ for (file in files){
   # Study Swap links
   #swap_links <- data.frame(link = ifelse(is.null(feedback$Study_Swap), NA, feedback$Study_Swap))
   
+  # Fix typo in column name ============================================================
+  
+  data_ppt <- data_ppt |>
+    rename_with(~ stringr::str_replace(.x, "IRI_Cogntive", "IRI_Cognitive"))
 
+  
   alldata <- rbind(alldata, data_ppt)  
   
   # TASK DATA ====================================================================================
@@ -265,7 +276,7 @@ for (file in files){
   resp1 <- do.call(rbind, resp1)
   attention_check1 <- do.call(rbind, attention_check1)
   ratings1 <- rbind(resp1, attention_check1)
-
+  
 
   stims1$order <- seq_len(nrow(stims1))
   ratings1$order <- seq_len(nrow(ratings1))
@@ -283,6 +294,10 @@ for (file in files){
   )
   
  data_task$participantID <- rep(participantID, each = 6)
+ 
+ #Attention checks -> logical
+   #data_task$AttentionCheck <- ifelse(data_task$AttentionCheck==data_task$topic,TRUE,FALSE)
+ 
   
   # Remove order column
   data_task$order <- NULL
@@ -336,19 +351,22 @@ for (file in files){
 
 # Reanonimize ============================================================
 
-# # order based on the date of the experiment
-# alldata <- alldata[order(alldata$Experiment_StartDate), ]
-# # Create correspondence map (mapping original Participant IDs to new ones)
-# correspondance <- setNames(paste0("S", sprintf("%03d", seq_along(alldata$Participant))), alldata$Participant)
-# # Reanonymize both datasets by updating the 'Participant' column
-# alldata$Participant <- correspondance[alldata$Participant]
-# alldata$Participant <- correspondance[alldata$Participant]
+#Generate IDs
+ids <- paste0("S", format(sprintf("%03d", 1:nrow(alldata))))
+# Sort Participant according to date and assign new IDs
+names(ids) <- alldata$Participant[order(alldata$Experiment_StartDate)]
+# Replace IDs
+alldata$Participant <- ids[alldata$Participant]
+all_task$participantID <- ids[all_task$participantID]
+
 
 # Save --------------------------------------------------------------------
 
-write.csv(alldata, "../data/rawdata_participants.csv", row.names = FALSE)
-write.csv(all_task, "../data/rawdata_task.csv", row.names = FALSE)
+# write.csv(alldata, "C:/ReBel/github/FakeChat/data/rawdata_participants.csv", row.names = FALSE)
+# write.csv(all_task, "C:/ReBel/github/FakeChat/data/rawdata_task.csv", row.names = FALSE)
 
+write.csv(alldata, "C:/Users/emmal/OneDrive - University of Sussex/GitHub/Dissertation/FakeChat/data/rawdata_participants.csv", row.names = FALSE)
+write.csv(all_task, "C:/Users/emmal/OneDrive - University of Sussex/GitHub/Dissertation/FakeChat/data/rawdata_task.csv", row.names = FALSE)
 
 # Study Swap Link
 #write.csv(swap_links , "../swap_links.csv", row.names = FALSE)

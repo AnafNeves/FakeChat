@@ -227,7 +227,7 @@ var experiment_feedback = {
     survey_json: {
         title: "Feedback",
         description:
-            "It is the end of the experiment! Don't hesitate to leave us a feedback.",
+            "Don't hesitate to leave us a feedback. Your data is not saved yet - please don't close the tab until you reach the 'Data saved successfully!' page.",
         completeText: "Complete the experiment",
         showQuestionNumbers: false,
         pages: [
