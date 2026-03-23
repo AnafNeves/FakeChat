@@ -113,6 +113,12 @@
 "S068","romantic2","Human","Romantic",2,1,4,1,NA,-53
 "S068","trivial1","AI","Trivial",4,2,6,3,"Mental Health",-100
 "S068","trivial2","Human","Trivial",6,1,7,1,NA,-78
+"S124","mental1","AI","Mental",2,1,1,1,NA,-70
+"S124","mental2","Human","Mental",4,2,2,1,"Mental Health",13
+"S124","romantic1","AI","Romantic",3,3,1,1,"Mental Health",32
+"S124","romantic2","Human","Romantic",5,4,2,2,NA,-33
+"S124","trivial1","AI","Trivial",1,1,1,1,NA,-100
+"S124","trivial2","Human","Trivial",4,4,1,1,NA,-42
 "S076","mental1","AI","Mental",4,3,2,2,NA,100
 "S076","mental2","Human","Mental",4,4,2,2,NA,100
 "S076","romantic1","AI","Romantic",4,3,5,3,NA,-100
@@ -185,6 +191,12 @@
 "S069","romantic2","Human","Romantic",6,5,5,4,"Everyday / Trivial",-100
 "S069","trivial1","AI","Trivial",5,4,5,4,"Mental Health",-100
 "S069","trivial2","Human","Trivial",3,3,3,2,NA,-100
+"S121","mental1","AI","Mental",2,5,7,2,"Everyday / Trivial",-17
+"S121","mental2","Human","Mental",1,1,7,2,NA,-100
+"S121","romantic1","AI","Romantic",2,4,7,1,"Romantic",-100
+"S121","romantic2","Human","Romantic",2,3,7,2,NA,-100
+"S121","trivial1","AI","Trivial",2,5,7,2,NA,-100
+"S121","trivial2","Human","Trivial",2,4,7,2,NA,-100
 "S116","mental1","AI","Mental",3,1,5,2,NA,-100
 "S116","mental2","Human","Mental",1,1,1,1,NA,-100
 "S116","romantic1","Human","Romantic",6,1,7,2,"Everyday / Trivial",-100
@@ -323,6 +335,12 @@
 "S059","romantic2","Human","Romantic",6,1,5,6,NA,-100
 "S059","trivial1","AI","Trivial",2,2,3,2,NA,-100
 "S059","trivial2","Human","Trivial",6,2,5,5,"Romantic",-79
+"S123","mental1","AI","Mental",2,2,2,2,"Mental Health",-100
+"S123","mental2","Human","Mental",1,1,1,1,NA,20
+"S123","romantic1","AI","Romantic",5,4,4,1,NA,-71
+"S123","romantic2","Human","Romantic",3,2,1,1,"Mental Health",20
+"S123","trivial1","Human","Trivial",5,4,5,2,NA,-4
+"S123","trivial2","AI","Trivial",4,2,3,2,NA,-5
 "S007","mental1","Human","Mental",2,2,5,2,NA,80
 "S007","mental2","AI","Mental",2,2,4,2,NA,-60
 "S007","romantic1","Human","Romantic",3,2,4,2,"Everyday / Trivial",50
@@ -353,6 +371,12 @@
 "S078","romantic2","Human","Romantic",3,4,4,4,NA,18
 "S078","trivial1","AI","Trivial",1,1,4,1,NA,-100
 "S078","trivial2","Human","Trivial",1,1,1,1,"Romantic",100
+"S125","mental1","AI","Mental",4,5,3,4,NA,-25
+"S125","mental2","Human","Mental",4,6,1,4,"Romantic",32
+"S125","romantic1","AI","Romantic",4,5,2,4,"Mental Health",59
+"S125","romantic2","Human","Romantic",4,6,6,5,NA,-50
+"S125","trivial1","AI","Trivial",4,5,3,7,NA,-91
+"S125","trivial2","Human","Trivial",4,6,6,7,NA,45
 "S031","mental1","Human","Mental",5,5,3,3,NA,-62
 "S031","mental2","AI","Mental",1,4,5,1,NA,-54
 "S031","romantic1","AI","Romantic",1,1,2,1,"Mental Health",-72
@@ -395,6 +419,12 @@
 "S070","romantic2","Human","Romantic",2,2,1,1,NA,-25
 "S070","trivial1","Human","Trivial",4,3,2,4,"Everyday / Trivial",-35
 "S070","trivial2","AI","Trivial",3,3,4,2,NA,-21
+"S128","mental1","AI","Mental",3,3,3,4,NA,-53
+"S128","mental2","Human","Mental",3,3,5,4,"Mental Health",-54
+"S128","romantic1","AI","Romantic",3,3,4,5,"Mental Health",11
+"S128","romantic2","Human","Romantic",5,2,2,3,NA,-80
+"S128","trivial1","Human","Trivial",5,3,5,4,NA,-37
+"S128","trivial2","AI","Trivial",5,1,2,3,NA,-63
 "S093","mental1","Human","Mental",3,3,2,2,NA,-31
 "S093","mental2","AI","Mental",3,4,4,4,"Everyday / Trivial",-32
 "S093","romantic1","AI","Romantic",2,2,1,1,NA,-81
@@ -431,6 +461,12 @@
 "S034","romantic2","AI","Romantic",3,4,3,4,NA,-70
 "S034","trivial1","Human","Trivial",4,5,2,2,"Romantic",-15
 "S034","trivial2","AI","Trivial",4,3,3,4,"Everyday / Trivial",-70
+"S127","mental1","Human","Mental",3,4,7,4,"Romantic",-100
+"S127","mental2","AI","Mental",7,2,7,7,NA,-100
+"S127","romantic1","AI","Romantic",7,2,7,7,NA,100
+"S127","romantic2","Human","Romantic",4,5,7,5,"Romantic",-100
+"S127","trivial1","AI","Trivial",4,4,7,4,NA,-100
+"S127","trivial2","Human","Trivial",7,7,7,7,NA,100
 "S088","mental1","AI","Mental",7,7,4,4,"Romantic",9
 "S088","mental2","Human","Mental",5,4,3,2,NA,-39
 "S088","romantic1","Human","Romantic",1,1,1,1,NA,100
@@ -515,6 +551,12 @@
 "S025","romantic2","Human","Romantic",6,5,5,5,NA,85
 "S025","trivial1","Human","Trivial",5,4,5,5,"Romantic",-95
 "S025","trivial2","AI","Trivial",5,3,5,4,NA,92
+"S120","mental1","AI","Mental",5,4,6,4,"Everyday / Trivial",-100
+"S120","mental2","Human","Mental",5,4,6,6,"Mental Health",-98
+"S120","romantic1","Human","Romantic",5,4,5,5,NA,-100
+"S120","romantic2","AI","Romantic",5,5,6,5,NA,-100
+"S120","trivial1","Human","Trivial",4,2,1,4,NA,-100
+"S120","trivial2","AI","Trivial",4,2,1,4,NA,-100
 "S055","mental1","AI","Mental",2,1,2,2,"Mental Health",-100
 "S055","mental2","Human","Mental",4,1,1,3,NA,-74
 "S055","romantic1","Human","Romantic",1,3,1,1,NA,-37
@@ -575,6 +617,12 @@
 "S071","romantic2","Human","Romantic",1,1,1,1,NA,-100
 "S071","trivial1","Human","Trivial",6,5,5,4,NA,-51
 "S071","trivial2","AI","Trivial",4,4,5,4,"Romantic",-100
+"S122","mental1","Human","Mental",1,1,1,1,NA,17
+"S122","mental2","AI","Mental",1,1,3,4,NA,-79
+"S122","romantic1","AI","Romantic",4,2,2,3,"Romantic",21
+"S122","romantic2","Human","Romantic",1,1,2,2,NA,-100
+"S122","trivial1","Human","Trivial",2,1,1,2,"Mental Health",-100
+"S122","trivial2","AI","Trivial",3,3,2,1,NA,33
 "S003","mental1","AI","Mental",7,7,7,6,"Romantic",-95
 "S003","mental2","Human","Mental",5,1,2,1,NA,-100
 "S003","romantic1","AI","Romantic",1,1,1,1,NA,100
@@ -623,6 +671,12 @@
 "S101","romantic2","AI","Romantic",2,2,1,1,NA,-45
 "S101","trivial1","Human","Trivial",4,3,3,5,NA,9
 "S101","trivial2","AI","Trivial",3,3,3,3,"Everyday / Trivial",-61
+"S129","mental1","Human","Mental",5,4,3,4,"Mental Health",100
+"S129","mental2","AI","Mental",4,5,2,5,NA,-55
+"S129","romantic1","AI","Romantic",4,4,6,4,NA,-100
+"S129","romantic2","Human","Romantic",6,2,2,4,NA,-88
+"S129","trivial1","Human","Trivial",5,5,4,6,"Romantic",-100
+"S129","trivial2","AI","Trivial",3,2,1,1,NA,-75
 "S032","mental1","AI","Mental",2,1,2,2,NA,-34
 "S032","mental2","Human","Mental",3,4,1,3,"Mental Health",-44
 "S032","romantic1","Human","Romantic",3,4,5,4,NA,31
@@ -677,6 +731,12 @@
 "S098","romantic2","Human","Romantic",4,4,6,2,NA,-60
 "S098","trivial1","Human","Trivial",3,2,6,3,NA,40
 "S098","trivial2","AI","Trivial",2,2,4,2,NA,40
+"S126","mental1","AI","Mental",3,2,5,3,NA,-81
+"S126","mental2","Human","Mental",4,1,6,3,"Everyday / Trivial",50
+"S126","romantic1","Human","Romantic",4,2,1,5,NA,90
+"S126","romantic2","AI","Romantic",2,1,3,2,NA,-20
+"S126","trivial1","Human","Trivial",3,3,2,3,"Romantic",40
+"S126","trivial2","AI","Trivial",5,5,4,5,NA,-95
 "S042","mental1","Human","Mental",3,5,6,3,NA,81
 "S042","mental2","AI","Mental",2,1,7,2,"Everyday / Trivial",-100
 "S042","romantic1","AI","Romantic",1,1,2,1,NA,-100
